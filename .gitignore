@@ -23,6 +23,9 @@ package-lock.json
 # Ruby
 .direnv
 
+# ENV
+.env*
+
 # Emacs
 *~
 
