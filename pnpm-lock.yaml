@@ -158,6 +158,9 @@ importers:
       react-native:
         specifier: 0.72.6
         version: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
+      react-native-unistyles:
+        specifier: ^1.2.0
+        version: 1.2.0(@react-native/normalize-colors@0.72.0)(react-native@0.72.6)(react@18.2.0)
       react-test-renderer:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -8875,6 +8878,23 @@ packages:
       react-native: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
       warn-once: 0.1.1
     dev: false
+
+  /react-native-unistyles@1.2.0(@react-native/normalize-colors@0.72.0)(react-native@0.72.6)(react@18.2.0):
+    resolution: {integrity: sha512-w0ytVDr7AwGhLWm7XPRjM3hhZSF/Db9yfSAFHZcGNoJPf2IJ4QaeF+v18OzZVB74vO7rbCGu8q9fXNHF5bkPGg==}
+    engines: {node: '>= 18.0.0'}
+    peerDependencies:
+      '@react-native/normalize-colors': '*'
+      react: '*'
+      react-native: '*'
+      react-native-web: '*'
+    peerDependenciesMeta:
+      react-native-web:
+        optional: true
+    dependencies:
+      '@react-native/normalize-colors': 0.72.0
+      react: 18.2.0
+      react-native: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
+    dev: true
 
   /react-native-web@0.19.9(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-m69arZbS6FV+BNSKE6R/NQwUX+CzxCkYM7AJlSLlS8dz3BDzlaxG8Bzqtzv/r3r1YFowhnZLBXVKIwovKDw49g==}

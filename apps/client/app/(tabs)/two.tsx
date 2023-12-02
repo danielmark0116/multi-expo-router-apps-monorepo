@@ -1,3 +1,4 @@
+import { useStyles } from '@apps/ui';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../../components/Themed';

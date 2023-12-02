@@ -1,3 +1,4 @@
+import { useStyles } from '@apps/ui';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
@@ -15,12 +16,13 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  const { theme } = useStyles();
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: theme?.colors?.primary ?? 'white',
       }}
     >
       <Tabs.Screen
