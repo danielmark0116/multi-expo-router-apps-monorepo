@@ -1,13 +1,17 @@
+import { CustomText } from '@apps/ui';
 import { StyleSheet } from 'react-native';
 
-import { Text, View } from '@/components/Themed';
+import { View } from '@/components/Themed';
+import { env } from '@/constants/env';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <CustomText>Tab One</CustomText>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>Client app</Text>
+      <CustomText>Client app</CustomText>
+
+      <CustomText>{JSON.stringify(env)}</CustomText>
     </View>
   );
 }
