@@ -1,12 +1,13 @@
+import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
-
-import { Text, View } from '../components/Themed';
+import { Platform, View } from 'react-native';
 
 export default function ModalScreen() {
+  const { styles } = useStyles(stylesheet);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
+      <CustomText>Modal</CustomText>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
@@ -15,7 +16,7 @@ export default function ModalScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet({
   container: {
     flex: 1,
     alignItems: 'center',

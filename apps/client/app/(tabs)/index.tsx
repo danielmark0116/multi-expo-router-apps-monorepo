@@ -1,10 +1,11 @@
-import { CustomText } from '@apps/ui';
-import { StyleSheet } from 'react-native';
+import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
+import { View } from 'react-native';
 
-import { View } from '@/components/Themed';
 import { env } from '@/constants/env';
 
 export default function TabOneScreen() {
+  const { styles } = useStyles(stylesheet);
+
   return (
     <View style={styles.container}>
       <CustomText>Tab One</CustomText>
@@ -16,7 +17,7 @@ export default function TabOneScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet({
   container: {
     flex: 1,
     alignItems: 'center',
