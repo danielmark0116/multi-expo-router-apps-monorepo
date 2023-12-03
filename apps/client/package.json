@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@apps/features": "*",
+    "@apps/shared": "*",
     "@apps/ui": "*",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",

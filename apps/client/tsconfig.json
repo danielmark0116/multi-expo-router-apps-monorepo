@@ -6,6 +6,7 @@
     "paths": {
       "@ui/*": ["../../packages/ui/src/*"],
       "@features/*": ["../../packages/features/src/*"],
+      "@shared/*": ["../../packages/shared/src/*"],
       "@/*": [
         "./*"
       ]

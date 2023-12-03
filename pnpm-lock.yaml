@@ -24,6 +24,9 @@ importers:
       '@apps/features':
         specifier: '*'
         version: link:../../packages/features
+      '@apps/shared':
+        specifier: '*'
+        version: link:../../packages/shared
       '@apps/ui':
         specifier: '*'
         version: link:../../packages/ui
@@ -127,6 +130,55 @@ importers:
       '@apps/ui':
         specifier: '*'
         version: link:../ui
+      react-native-web:
+        specifier: '*'
+        version: 0.19.9(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@apps/eslint-config':
+        specifier: '*'
+        version: link:../eslint-config
+      '@testing-library/react-native':
+        specifier: ^11.4.0
+        version: 11.5.4(jest@29.7.0)(react-native@0.72.6)(react-test-renderer@18.2.0)(react@18.2.0)
+      '@tsconfig/recommended':
+        specifier: ^1.0.1
+        version: 1.0.3
+      '@types/jest':
+        specifier: ^26.0.24
+        version: 26.0.24
+      '@types/react':
+        specifier: ~18.2.14
+        version: 18.2.41
+      '@types/react-native':
+        specifier: 0.72.6
+        version: 0.72.6(react-native@0.72.6)
+      babel-preset-expo:
+        specifier: ~9.5.0
+        version: 9.5.2(@babel/core@7.23.5)
+      jest:
+        specifier: ^29.2.1
+        version: 29.7.0
+      jest-expo:
+        specifier: ^49.0.0
+        version: 49.0.0(@babel/core@7.23.5)(jest@29.7.0)(react@18.2.0)
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.72.6
+        version: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
+      react-native-unistyles:
+        specifier: ^1.2.0
+        version: 1.2.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.9)(react-native@0.72.6)(react@18.2.0)
+      react-test-renderer:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      tsup:
+        specifier: ^6.5.0
+        version: 6.7.0(typescript@4.9.5)
+
+  packages/shared:
+    dependencies:
       react-native-web:
         specifier: '*'
         version: 0.19.9(react-dom@18.2.0)(react@18.2.0)
@@ -3083,7 +3135,6 @@ packages:
 
   /@react-native/normalize-colors@0.74.1:
     resolution: {integrity: sha512-r+bTRs6pImqE3fx4h7bPzH2sOWSrnSHF/RJ7d00pNUj2P6ws3DdhS7WV+/7YosZkloYQfkiIkK3pIHvcYn665w==}
-    dev: true
 
   /@react-native/virtualized-lists@0.72.8(react-native@0.72.6):
     resolution: {integrity: sha512-J3Q4Bkuo99k7mu+jPS9gSUSgq+lLRSI/+ahXNwV92XgJ/8UgOTxu2LPwhJnBk/sQKxq7E8WkZBnBiozukQMqrw==}
@@ -4796,7 +4847,7 @@ packages:
   /deprecated-react-native-prop-types@4.1.0:
     resolution: {integrity: sha512-WfepZHmRbbdTvhcolb8aOKEvQdcmTMn5tKLbqbXmkBvjFjRVWAYqsXk/DBsV8TZxws8SdGHLuHaJrHSQUPRdfw==}
     dependencies:
-      '@react-native/normalize-colors': 0.72.0
+      '@react-native/normalize-colors': 0.74.1
       invariant: 2.2.4
       prop-types: 15.8.1
 
