@@ -1,9 +1,11 @@
+import { useGetUsers } from '@apps/shared';
 import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
 import { View } from 'react-native';
 
 import { env } from '@/constants/env';
 
 export default function TabOneScreen() {
+  useGetUsers();
   const { styles } = useStyles(stylesheet);
 
   return (

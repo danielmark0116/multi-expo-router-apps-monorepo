@@ -68,5 +68,8 @@
       "react-native",
       "react-native-web"
     ]
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.12.2"
   }
 }

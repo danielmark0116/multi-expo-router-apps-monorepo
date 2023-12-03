@@ -1,3 +1,4 @@
+import { QueryProvider } from '@apps/shared';
 import { ThemeProvider as UIThemeProvider } from '@apps/ui';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
@@ -47,12 +48,14 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <UIThemeProvider appSlug="client">
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        </Stack>
-      </UIThemeProvider>
+      <QueryProvider>
+        <UIThemeProvider appSlug="client">
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+          </Stack>
+        </UIThemeProvider>
+      </QueryProvider>
     </ThemeProvider>
   );
 }
