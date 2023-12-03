@@ -1,4 +1,4 @@
-import { CustomText } from '@apps/ui';
+import { CustomText } from '@shared/components/CustomText/CustomText';
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 

@@ -1,6 +1,7 @@
-import { createStyleSheet, useStyles } from '@ui/components/ThemeProvider/ThemeProvider';
 import { PropsWithChildren } from 'react';
 import { Text } from 'react-native';
+
+import { createStyleSheet, useStyles } from '../ThemeProvider/ThemeProvider';
 
 export const CustomText = ({ children }: PropsWithChildren<unknown>) => {
   const { styles } = useStyles(stylesheet);

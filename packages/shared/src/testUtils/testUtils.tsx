@@ -1,9 +1,8 @@
-import { ThemeProvider } from '@apps/ui';
+import { ThemeProvider } from '@shared/components/ThemeProvider/ThemeProvider';
 import { render, RenderOptions } from '@testing-library/react-native';
 import { PropsWithChildren } from 'react';
 
 const AllTheProviders = ({ children }: PropsWithChildren<unknown>) => {
-  console.log('theme provider: ', ThemeProvider);
   return <ThemeProvider appSlug="testApp">{children}</ThemeProvider>;
 };
 
@@ -11,7 +10,6 @@ const customRender = (
   ui: Parameters<typeof render>[0],
   options?: RenderOptions
 ): ReturnType<typeof render> => {
-  // return render(ui, { wrapper: AllTheProviders, ...options }) as any;
   return render(ui, { wrapper: AllTheProviders, ...options }) as any;
 };
 

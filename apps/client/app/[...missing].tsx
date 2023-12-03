@@ -1,4 +1,4 @@
-import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
+import { CustomText, createStyleSheet, useStyles } from '@apps/shared';
 import { Link, Stack } from 'expo-router';
 import { View } from 'react-native';
 

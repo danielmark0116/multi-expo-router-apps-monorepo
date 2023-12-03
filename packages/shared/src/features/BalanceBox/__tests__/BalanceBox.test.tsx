@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@apps/shared';
+import { fireEvent, render, screen } from '@shared/testUtils/testUtils';
 
 import { BalanceBox } from '../BalanceBox';
 

@@ -17,12 +17,14 @@
     "disabled-eas-build-post-install": "CI=false pnpm run -w build:client"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleNameMapper": {
+      "^@shared(.*)$": "<rootDir>/../../packages/shared/src$1",
+      "^@/(.*)$": "<rootDir>/$1"
+    }
   },
   "dependencies": {
-    "@apps/features": "*",
     "@apps/shared": "*",
-    "@apps/ui": "*",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
     "expo": "~49.0.15",

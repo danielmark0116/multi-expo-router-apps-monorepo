@@ -1,5 +1,4 @@
-import { QueryProvider } from '@apps/shared';
-import { ThemeProvider as UIThemeProvider } from '@apps/ui';
+import { QueryProvider, ThemeProvider as UIThemeProvider } from '@apps/shared';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';

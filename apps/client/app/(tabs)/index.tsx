@@ -1,5 +1,4 @@
-import { useGetUsers } from '@apps/shared';
-import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
+import { useGetUsers, CustomText, createStyleSheet, useStyles } from '@apps/shared';
 import { View } from 'react-native';
 
 import { env } from '@/constants/env';

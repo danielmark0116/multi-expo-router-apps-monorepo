@@ -1,6 +1,4 @@
-import { BalanceBox } from '@apps/features';
-import { API } from '@apps/shared';
-import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
+import { BalanceBox, API, CustomText, createStyleSheet, useStyles } from '@apps/shared';
 import { View } from 'react-native';
 
 export default function TabTwoScreen() {

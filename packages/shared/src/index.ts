@@ -1,3 +1,10 @@
+// Components
+export * from './components/CustomText/CustomText';
+export * from './components/ThemeProvider/ThemeProvider';
+
+// Features
+export * from './features/BalanceBox/BalanceBox';
+
 // Hooks
 export * from './hooks/useRefreshOnFocus';
 
@@ -14,3 +21,6 @@ export * from './reactQuery/queries/useGetUsers';
 
 // Test utils (render with wrapper, wrapper)
 export * from './testUtils/testUtils';
+
+// Theme
+export * from './theme/index';

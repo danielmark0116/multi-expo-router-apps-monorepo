@@ -1,5 +1,5 @@
-import { Theme, themes } from '@ui/theme';
-import { breakpoints } from '@ui/theme/breakpoints';
+import { Theme, themes } from '@shared/theme';
+import { breakpoints } from '@shared/theme/breakpoints';
 import { PropsWithChildren } from 'react';
 import { useColorScheme } from 'react-native';
 import { createUnistyles, UnistylesTheme } from 'react-native-unistyles';
