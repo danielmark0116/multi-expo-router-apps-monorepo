@@ -4,13 +4,7 @@
   },
   "build": {
     "monorepo": {
-      "node": "18.18.0",
-      "cache": {
-        "key": "turbo",
-        "paths": [
-          "../../node_modules/.cache/turbo"
-        ]
-      }
+      "node": "18.18.0"
     },
     "development": {
       "extends": "monorepo",
@@ -30,6 +24,18 @@
       },
       "ios": {
         "resourceClass": "m1-medium"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "bundleIdentifier": "com.demo.apps.client",
+        "ascAppId": "6473684788",
+        "appName": "Client Demo Prod"
+      },
+      "android": {
+        "releaseStatus": "draft"
       }
     }
   }
