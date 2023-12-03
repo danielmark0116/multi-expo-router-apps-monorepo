@@ -11,3 +11,6 @@ export * from './reactQuery/queries/useGetUsers';
 
 // Mutations
 // export * from './reactQuery/mutations/useCreateUser';
+
+// Test utils (render with wrapper, wrapper)
+export * from './testUtils/testUtils';

@@ -1,11 +1,10 @@
-import { ThemeProvider } from '@apps/ui';
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@apps/shared';
 
 import { BalanceBox } from '../BalanceBox';
 
 describe('BalanceBox', () => {
   it('should increment balance when button is pressed', async () => {
-    render(<BalanceBox />, { wrapper: ThemeProvider });
+    render(<BalanceBox />);
 
     const button = await screen.getByTestId('balanceBoxButton');
     fireEvent.press(button);

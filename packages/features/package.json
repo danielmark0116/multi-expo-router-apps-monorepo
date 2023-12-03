@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "@apps/eslint-config": "*",
+    "@apps/shared": "*",
+    "@apps/ui": "*",
     "@testing-library/react-native": "^11.4.0",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^26.0.24",
