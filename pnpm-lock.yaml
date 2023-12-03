@@ -21,6 +21,9 @@ importers:
 
   apps/client:
     dependencies:
+      '@apps/features':
+        specifier: '*'
+        version: link:../../packages/features
       '@apps/ui':
         specifier: '*'
         version: link:../../packages/ui
@@ -84,7 +87,7 @@ importers:
         version: 7.23.5
       '@types/react':
         specifier: ~18.2.14
-        version: 18.2.40
+        version: 18.2.41
       '@types/react-native':
         specifier: 0.72.6
         version: 0.72.6(react-native@0.72.6)
@@ -119,8 +122,11 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
 
-  packages/ui:
+  packages/features:
     dependencies:
+      '@apps/ui':
+        specifier: '*'
+        version: link:../ui
       react-native-web:
         specifier: '*'
         version: 0.19.9(react-dom@18.2.0)(react@18.2.0)
@@ -139,7 +145,7 @@ importers:
         version: 26.0.24
       '@types/react':
         specifier: ~18.2.14
-        version: 18.2.40
+        version: 18.2.41
       '@types/react-native':
         specifier: 0.72.6
         version: 0.72.6(react-native@0.72.6)
@@ -160,7 +166,56 @@ importers:
         version: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
       react-native-unistyles:
         specifier: ^1.2.0
-        version: 1.2.0(@react-native/normalize-colors@0.72.0)(react-native@0.72.6)(react@18.2.0)
+        version: 1.2.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.9)(react-native@0.72.6)(react@18.2.0)
+      react-test-renderer:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      tsup:
+        specifier: ^6.5.0
+        version: 6.7.0(typescript@4.9.5)
+
+  packages/ui:
+    dependencies:
+      react-native-web:
+        specifier: '*'
+        version: 0.19.9(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@apps/eslint-config':
+        specifier: '*'
+        version: link:../eslint-config
+      '@testing-library/react-native':
+        specifier: ^11.4.0
+        version: 11.5.4(jest@29.7.0)(react-native@0.72.6)(react-test-renderer@18.2.0)(react@18.2.0)
+      '@tsconfig/recommended':
+        specifier: ^1.0.1
+        version: 1.0.3
+      '@types/jest':
+        specifier: ^26.0.24
+        version: 26.0.24
+      '@types/react':
+        specifier: ~18.2.14
+        version: 18.2.41
+      '@types/react-native':
+        specifier: 0.72.6
+        version: 0.72.6(react-native@0.72.6)
+      babel-preset-expo:
+        specifier: ~9.5.0
+        version: 9.5.2(@babel/core@7.23.5)
+      jest:
+        specifier: ^29.2.1
+        version: 29.7.0
+      jest-expo:
+        specifier: ^49.0.0
+        version: 49.0.0(@babel/core@7.23.5)(jest@29.7.0)(react@18.2.0)
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.72.6
+        version: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
+      react-native-unistyles:
+        specifier: ^1.2.0
+        version: 1.2.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.9)(react-native@0.72.6)(react@18.2.0)
       react-test-renderer:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -3026,6 +3081,10 @@ packages:
   /@react-native/normalize-colors@0.72.0:
     resolution: {integrity: sha512-285lfdqSXaqKuBbbtP9qL2tDrfxdOFtIMvkKadtleRQkdOxx+uzGvFr82KHmc/sSiMtfXGp7JnFYWVh4sFl7Yw==}
 
+  /@react-native/normalize-colors@0.74.1:
+    resolution: {integrity: sha512-r+bTRs6pImqE3fx4h7bPzH2sOWSrnSHF/RJ7d00pNUj2P6ws3DdhS7WV+/7YosZkloYQfkiIkK3pIHvcYn665w==}
+    dev: true
+
   /@react-native/virtualized-lists@0.72.8(react-native@0.72.6):
     resolution: {integrity: sha512-J3Q4Bkuo99k7mu+jPS9gSUSgq+lLRSI/+ahXNwV92XgJ/8UgOTxu2LPwhJnBk/sQKxq7E8WkZBnBiozukQMqrw==}
     peerDependencies:
@@ -3270,13 +3329,13 @@ packages:
     resolution: {integrity: sha512-5Tan0ejOjbYyrnRreRZ7ftcWbehQELoHevJQliAu0Rhqrsnall8dyodf/434jdDJuQEzLisBMg7ZkQNnghUXIw==}
     dependencies:
       '@react-native/virtualized-lists': 0.72.8(react-native@0.72.6)
-      '@types/react': 18.2.40
+      '@types/react': 18.2.41
     transitivePeerDependencies:
       - react-native
     dev: true
 
-  /@types/react@18.2.40:
-    resolution: {integrity: sha512-H+BUhb9C1zBtogDLAk+KCNRKiHDrqSwQT/0z0PVTwMFBxqg3011ByLomADtgkgMkfwj4AMOiXBReyLTUBg681g==}
+  /@types/react@18.2.41:
+    resolution: {integrity: sha512-CwOGr/PiLiNBxEBqpJ7fO3kocP/2SSuC9fpH5K7tusrg4xPSRT/193rzolYwQnTN02We/ATXKnb6GqA5w4fRxw==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -4509,7 +4568,6 @@ packages:
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
-    dev: false
 
   /cross-spawn@6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
@@ -4548,7 +4606,6 @@ packages:
     resolution: {integrity: sha512-fJAcud6B3rRu+KHYk+Bwf+WFL2MDCJJ1XG9x137tJQ0xYxor7XziQtuGFbWNdqrvF4Tk26O3H73nfVqXt/fW1A==}
     dependencies:
       hyphenate-style-name: 1.0.4
-    dev: false
 
   /cssom@0.3.8:
     resolution: {integrity: sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==}
@@ -5658,7 +5715,6 @@ packages:
 
   /fast-loops@1.1.3:
     resolution: {integrity: sha512-8EZzEP0eKkEEVX+drtd9mtuQ+/QrlfW/5MlwcwK5Nds6EkZ/tRzEexkzUY2mIssnAyVLT+TKHuRXmFNNXYUd6g==}
-    dev: false
 
   /fast-xml-parser@4.3.2:
     resolution: {integrity: sha512-rmrXUXwbJedoXkStenj1kkljNF7ugn5ZjR9FJcwmCfcCbtOMDghPajbc+Tck6vE6F5XsDmx+Pr2le9fw8+pXBg==}
@@ -5686,7 +5742,6 @@ packages:
 
   /fbjs-css-vars@1.0.2:
     resolution: {integrity: sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==}
-    dev: false
 
   /fbjs@3.0.5:
     resolution: {integrity: sha512-ztsSx77JBtkuMrEypfhgc3cI0+0h+svqeie7xHbh1k/IKdcydnvadp/mUaGgjAOXQmQSxsqgaRhS3q9fy+1kxg==}
@@ -5700,7 +5755,6 @@ packages:
       ua-parser-js: 1.0.37
     transitivePeerDependencies:
       - encoding
-    dev: false
 
   /fetch-retry@4.1.1:
     resolution: {integrity: sha512-e6eB7zN6UBSwGVwrbWVH+gdLnkW9WwHhmq2YDK1Sh30pzx1onRVGBvogTlUeWxwTa+L86NYdo4hFkh7O8ZjSnA==}
@@ -6180,7 +6234,6 @@ packages:
 
   /hyphenate-style-name@1.0.4:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
-    dev: false
 
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -6265,7 +6318,6 @@ packages:
     dependencies:
       css-in-js-utils: 3.1.0
       fast-loops: 1.1.3
-    dev: false
 
   /internal-ip@4.3.0:
     resolution: {integrity: sha512-S1zBo1D6zcsyuC6PMmY5+55YMILQ9av8lotMx447Bq6SAgo/sDK6y6uUKmuYhW7eacnIhFfsPmCNYdDzsnnDCg==}
@@ -7639,7 +7691,6 @@ packages:
 
   /memoize-one@6.0.0:
     resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
-    dev: false
 
   /memory-cache@0.2.0:
     resolution: {integrity: sha512-OcjA+jzjOYzKmKS6IQVALHLVz+rNTMPoJvCztFaZxwG14wtAW7VRZjwTQu06vKCYOxh4jVnik7ya0SXTB0W+xA==}
@@ -8592,7 +8643,6 @@ packages:
 
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-    dev: false
 
   /postcss@8.4.32:
     resolution: {integrity: sha512-D/kj5JNu6oo2EIy+XL/26JEDTlIbB8hw85G8StOE6L74RQAVVP5rej6wxCNqyMbR4RkPfqvezVbPw81Ngd6Kcw==}
@@ -8669,7 +8719,6 @@ packages:
     resolution: {integrity: sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==}
     dependencies:
       asap: 2.0.6
-    dev: false
 
   /promise@8.3.0:
     resolution: {integrity: sha512-rZPNPKTOYVNEEKFaq1HqTgOwZD+4/YHS5ukLzQCypkj+OkYx7iv0mA91lJlpPPZ8vMau3IIGj5Qlwrx+8iiSmg==}
@@ -8803,7 +8852,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
 
   /react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
@@ -8879,7 +8927,7 @@ packages:
       warn-once: 0.1.1
     dev: false
 
-  /react-native-unistyles@1.2.0(@react-native/normalize-colors@0.72.0)(react-native@0.72.6)(react@18.2.0):
+  /react-native-unistyles@1.2.0(@react-native/normalize-colors@0.74.1)(react-native-web@0.19.9)(react-native@0.72.6)(react@18.2.0):
     resolution: {integrity: sha512-w0ytVDr7AwGhLWm7XPRjM3hhZSF/Db9yfSAFHZcGNoJPf2IJ4QaeF+v18OzZVB74vO7rbCGu8q9fXNHF5bkPGg==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
@@ -8891,9 +8939,10 @@ packages:
       react-native-web:
         optional: true
     dependencies:
-      '@react-native/normalize-colors': 0.72.0
+      '@react-native/normalize-colors': 0.74.1
       react: 18.2.0
       react-native: 0.72.6(@babel/core@7.23.5)(react@18.2.0)
+      react-native-web: 0.19.9(react-dom@18.2.0)(react@18.2.0)
     dev: true
 
   /react-native-web@0.19.9(react-dom@18.2.0)(react@18.2.0):
@@ -8914,7 +8963,6 @@ packages:
       styleq: 0.1.3
     transitivePeerDependencies:
       - encoding
-    dev: false
 
   /react-native@0.72.6(@babel/core@7.23.5)(react@18.2.0):
     resolution: {integrity: sha512-RafPY2gM7mcrFySS8TL8x+TIO3q7oAlHpzEmC7Im6pmXni6n1AuufGaVh0Narbr1daxstw7yW7T9BKW5dpVc2A==}
@@ -9401,7 +9449,6 @@ packages:
 
   /setimmediate@1.0.5:
     resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==}
-    dev: false
 
   /setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
@@ -9725,7 +9772,6 @@ packages:
 
   /styleq@0.1.3:
     resolution: {integrity: sha512-3ZUifmCDCQanjeej1f6kyl/BeP/Vae5EYkQ9iJfUm/QwZvlgnZzyflqAsAWYURdtea8Vkvswu2GrC57h3qffcA==}
-    dev: false
 
   /sucrase@3.34.0:
     resolution: {integrity: sha512-70/LQEZ07TEcxiU2dz51FKaE6hCTWC6vr7FOk3Gr0U60C3shtAN+H+BFr9XlYe5xqf3RA8nrc+VIwzCfnxuXJw==}
@@ -10191,7 +10237,6 @@ packages:
 
   /ua-parser-js@1.0.37:
     resolution: {integrity: sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==}
-    dev: false
 
   /uglify-es@3.3.9:
     resolution: {integrity: sha512-r+MU0rfv4L/0eeW3xZrd16t4NZfK8Ld4SWVglYBb7ez5uXFWHuVRs6xCTrf1yirs9a4j4Y27nn7SRfO6v67XsQ==}

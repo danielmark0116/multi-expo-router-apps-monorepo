@@ -1,3 +1,4 @@
+import { BalanceBox } from '@apps/features';
 import { CustomText, createStyleSheet, useStyles } from '@apps/ui';
 import { View } from 'react-native';
 
@@ -6,9 +7,10 @@ export default function TabTwoScreen() {
 
   return (
     <View style={styles.container}>
-      <CustomText style={styles.title}>Tab Two</CustomText>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <CustomText style={styles.title}>Client app</CustomText>
+      <CustomText>Tab Two</CustomText>
+      <View style={styles.separator} />
+      <CustomText>Client app</CustomText>
+      <BalanceBox />
     </View>
   );
 }

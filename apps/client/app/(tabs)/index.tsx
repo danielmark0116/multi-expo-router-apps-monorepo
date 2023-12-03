@@ -9,7 +9,7 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <CustomText>Tab One</CustomText>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <View style={styles.separator} />
       <CustomText>Client app</CustomText>
 
       <CustomText>{JSON.stringify(env)}</CustomText>
