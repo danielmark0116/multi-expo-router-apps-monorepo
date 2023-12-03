@@ -8,7 +8,7 @@ export const BalanceBox = () => {
   return (
     <View>
       <CustomText>BalanceBox</CustomText>
-      <Pressable onPress={() => setCount(count + 1)}>
+      <Pressable testID="balanceBoxButton" onPress={() => setCount(count + 1)}>
         <CustomText>Count: {count}</CustomText>
       </Pressable>
     </View>

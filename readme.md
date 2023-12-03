@@ -44,8 +44,8 @@ pnpm run dev:merchant
 - [x] shared features
 - [x] shared query - just put in @apps/shared
 - [x] path aliases
-- [ ] mmkv OR atom + async storage?
 - [ ] extended tests set up
+- [ ] mmkv OR atom + async storage?
 - [ ] add merchant app
 - [x] types + domain - just put in @apps/shared
 - [x] eas + test on my account
@@ -54,6 +54,7 @@ pnpm run dev:merchant
 - [x] envs eas
 - [ ] github actions - prs - linting, tests, conventional naming
 - [ ] github actions - release with eas
+- [ ] nvim inline test runner not working in monorepo - fix it!
 - [ ] release-it
 - [ ] focus handler for query (useAppState)
 - [x] util hooks for query

@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "tsup --watch --silent",
     "lint": "eslint --ext js,ts,tsx .",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "tsup --clean"
   },
   "dependencies": {
