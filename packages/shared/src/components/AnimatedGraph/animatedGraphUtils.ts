@@ -116,6 +116,17 @@ const solveCubic = (a: number, b: number, c: number, d: number) => {
   return roots;
 };
 
+// this was crashing because (cuz of hermes?) it was not hoisted
+const cubicBezier = (t: number, from: number, c1: number, c2: number, to: number) => {
+  'worklet';
+  const term = 1 - t;
+  const a = 1 * term ** 3 * t ** 0 * from;
+  const b = 3 * term ** 2 * t ** 1 * c1;
+  const c = 3 * term ** 1 * t ** 2 * c2;
+  const d = 1 * term ** 0 * t ** 3 * to;
+  return a + b + c + d;
+};
+
 export const cubicBezierYForX = (
   x: number,
   a: Vector,
@@ -133,22 +144,8 @@ export const cubicBezierYForX = (
   const t = solveCubic(pa, pb, pc, pd)
     .map((root) => round(root, precision))
     .filter((root) => root >= 0 && root <= 1)[0];
-  return 0;
   const y = cubicBezier(t, a.y, b.y, c.y, d.y);
   return y;
-};
-
-// this crashes!
-const cubicBezier = (t: number, from: number, c1: number, c2: number, to: number) => {
-  'worklet';
-  console.log('cubicBezier', t, from, c1, c2, to);
-  return 0;
-  const term = 1 - t;
-  const a = 1 * term ** 3 * t ** 0 * from;
-  const b = 3 * term ** 2 * t ** 1 * c1;
-  const c = 3 * term ** 1 * t ** 2 * c2;
-  const d = 1 * term ** 0 * t ** 3 * to;
-  return a + b + c + d;
 };
 
 export const getYForX = (cmds: PathCommand[], x: number, precision = 2) => {
