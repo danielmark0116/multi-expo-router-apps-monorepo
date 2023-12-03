@@ -1,5 +1,9 @@
-export * from './reactQuery/API';
+// Hooks
+export * from './hooks/useRefreshOnFocus';
+
+// API
 export * from './reactQuery/client';
+export * from './reactQuery/API';
 
 // Queries
 export * from './reactQuery/queries/QUERY_KEYS';
