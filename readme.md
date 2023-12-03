@@ -56,5 +56,6 @@ pnpm run dev:merchant
 - [ ] github actions - release with eas
 - [ ] nvim inline test runner not working in monorepo - fix it!
 - [ ] release-it
+- [ ] move deps from packages to peerDeps?
 - [ ] focus handler for query (useAppState)
 - [x] util hooks for query
