@@ -1,6 +1,8 @@
 import { BalanceBox, API, CustomText, createStyleSheet, useStyles } from '@apps/shared';
 import { View } from 'react-native';
 
+import { TestGraph } from '@/components/TestGraph/TestGraph';
+
 export default function TabTwoScreen() {
   const { styles } = useStyles(stylesheet);
 
@@ -11,6 +13,7 @@ export default function TabTwoScreen() {
       <View style={styles.separator} />
       <CustomText>Client app</CustomText>
       <BalanceBox />
+      <TestGraph />
     </View>
   );
 }
