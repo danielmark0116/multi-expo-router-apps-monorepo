@@ -1,18 +1,15 @@
-import {
-  Canvas,
-  Group,
-  LinearGradient,
-  Path,
-  PathDef,
-  Skia,
-  SkPath,
-  vec,
-} from '@shopify/react-native-skia';
+import { Canvas, Group, LinearGradient, Path, Skia, SkPath, vec } from '@shopify/react-native-skia';
 import * as d3 from 'd3';
-import { useCallback, useDeferredValue, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { Dimensions, LayoutChangeEvent, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { interpolate, useDerivedValue, useSharedValue, withTiming } from 'react-native-reanimated';
+import {
+  interpolate,
+  useAnimatedReaction,
+  useDerivedValue,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
 import { parse } from 'react-native-redash';
 
 import { Indicator } from './Indicator';
@@ -25,12 +22,15 @@ type DataPoint = {
   y: number;
 };
 
+// TODO properly handle current and next graph to handle interpolation and animation (with state based on useShareValue)
+
 const data: DataPoint[] = [
-  { x: 0, y: 10 },
+  { x: 0, y: 0 },
   { x: 10, y: 20 },
+  { x: 20, y: 20 },
   { x: 30, y: 100 },
-  { x: 50, y: 5 },
-  { x: 60, y: 10 },
+  { x: 40, y: 5 },
+  { x: 50, y: 10 },
   { x: 60, y: 80 },
   { x: 70, y: 80 },
   { x: 80, y: 100 },
@@ -40,22 +40,23 @@ const data: DataPoint[] = [
 
 const data2: DataPoint[] = [
   { x: 0, y: 10 },
-  { x: 10, y: 20 },
-  { x: 30, y: 0 },
-  { x: 50, y: 5 },
-  { x: 60, y: 10 },
-  { x: 60, y: 80 },
+  { x: 10, y: 80 },
+  { x: 20, y: 20 },
+  { x: 30, y: 20 },
+  { x: 40, y: 5 },
+  { x: 50, y: 10 },
+  { x: 60, y: 40 },
   { x: 70, y: 80 },
-  { x: 80, y: 50 },
-  { x: 90, y: 5 },
-  { x: 100, y: 40 },
+  { x: 80, y: 20 },
+  { x: 90, y: 20 },
+  { x: 100, y: 50 },
 ];
 
 const xScale = d3.scaleLinear().domain([0, 100]).range([0, width]);
 const yScale = d3
   .scaleLinear()
   .domain([0, 100])
-  .range([0 + 80, width - 40]);
+  .range([0 + 40, width - 40]);
 
 const line = d3
   .line<DataPoint>()
@@ -91,7 +92,18 @@ const posPath2 = getGradientAreaSplit(path2, width, width, 'positive');
 
 export const AnimatedGraph = () => {
   const indicatorX = useSharedValue(0);
+  // TODO: should be interpolated so it does not reach 0 on the left, max 4 and higher
+  // cuz it behaves strangely
   const translate = useSharedValue(0);
+
+  useAnimatedReaction(
+    () => {
+      return indicatorX.value;
+    },
+    (v) => {
+      console.log(v);
+    }
+  );
 
   useEffect(() => {
     setTimeout(() => {
