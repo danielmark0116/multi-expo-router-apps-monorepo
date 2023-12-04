@@ -1,0 +1,42 @@
+{
+  "cli": {
+    "promptToConfigurePushNotifications": false
+  },
+  "build": {
+    "monorepo": {
+      "node": "18.18.0"
+    },
+    "development": {
+      "extends": "monorepo",
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "resourceClass": "m1-medium"
+      }
+    },
+    "production": {
+      "extends": "monorepo",
+      "distribution": "store",
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "resourceClass": "m1-medium"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "bundleIdentifier": "com.demo.apps.merchant",
+        "ascAppId": "change-it",
+        "appName": "Merchant Demo Prod"
+      },
+      "android": {
+        "releaseStatus": "draft"
+      }
+    }
+  }
+}

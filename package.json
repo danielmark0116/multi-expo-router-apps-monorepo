@@ -4,10 +4,12 @@
   "scripts": {
     "dev": "turbo dev",
     "dev:client": "turbo dev --filter=\"{./apps/client}...\"",
+    "dev:merchant": "turbo dev --filter=\"{./apps/merchant}...\"",
     "lint": "turbo lint",
     "test": "turbo test",
     "build": "turbo build",
-    "build:client": "turbo build --filter=\"...{./apps/client}\""
+    "build:client": "turbo build --filter=\"...{./apps/client}\"",
+    "build:merchant": "turbo build --filter=\"...{./apps/merchant}\""
   },
   "license": "MIT",
   "devDependencies": {
