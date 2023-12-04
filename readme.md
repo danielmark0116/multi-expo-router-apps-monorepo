@@ -46,7 +46,7 @@ pnpm run dev:merchant
 - [x] path aliases
 - [ ] extended tests set up
 - [ ] mmkv OR atom + async storage?
-- [ ] add merchant app
+- [x] add merchant app
 - [x] types + domain - just put in @apps/shared
 - [x] eas + test on my account
 - [ ] test dev client and add to readme
